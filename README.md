@@ -1,69 +1,83 @@
-# React + TypeScript + Vite
+# 🚀 QuoteSpark
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek and responsive **Random Quote Generator** web app built using **React**, **TypeScript**, and **Vite**, and fully containerized using **Docker**.
 
-Currently, two official plugins are available:
+Whether you're looking for daily motivation or just some good words, QuoteSpark brings inspiration to your screen — one quote at a time.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📸 Preview
+![image](https://github.com/user-attachments/assets/0d336384-8159-4a69-904a-0ef466a87c28)
 
-## Expanding the ESLint configuration
+Coming soon...
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* 🎲 Random quote generation
+* 🎨 Clean UI with fast interactions
+* ⚡ Superfast build with Vite + React
+* 🧱 Type-safe development using TypeScript
+* 🐳 Docker support for containerized deployment
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* **Frontend**: React (TypeScript), Vite
+* **Containerization**: Docker
+* **Styling**: CSS Modules / Tailwind *(based on your setup)*
+* **Linting**: ESLint
+
+## 🧊 What is Docker?
+
+**Docker** is a platform that allows developers to package applications and their dependencies into a single **container**. This ensures your app runs the same in every environment — whether it's your local machine, a teammate's laptop, or a cloud server.
+
+### ✅ Benefits of using Docker:
+
+* No "it works on my machine" problems
+* Simplified app setup & portability
+* Consistent and isolated development environments
+* Great for deployment and DevOps workflows
+
+## 🚀 Getting Started
+
+### 🧑‍💻 Run Locally (Without Docker)
+
+```bash
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🐳 Running with Docker
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+You can easily run this application in a Docker container with the following steps:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 📦 Build the Docker Image
+
+```bash
+docker build -t quotespark .
 ```
+
+This command reads the `Dockerfile` and creates a Docker image named `quotespark`.
+
+### ▶️ Run the Container
+
+```bash
+docker run -p 5173:5173 quotespark
+```
+
+This maps port `5173` from the container to your local machine so you can open:
+http://localhost:5173
+
+## 🌟 Future Improvements
+
+* Add quote API integration (e.g., type.fit)
+* Dark/light theme toggle
+* Social sharing buttons
+* Deploy via GitHub Actions / Vercel / DockerHub
+
+## 🙌 Acknowledgements
+
+* [React](https://reactjs.org/)
+* [Vite](https://vitejs.dev/)
+* [Docker](https://www.docker.com/)
+* [Type.fit Quote API](https://type.fit/api/quotes)
